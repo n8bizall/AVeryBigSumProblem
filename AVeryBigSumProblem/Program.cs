@@ -1,15 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AVeryBigSumProblem
+
+
+class Solution
 {
-    class Program
+
+    static long aVeryBigSum(int n, long[] ar)
     {
-        static void Main(string[] args)
+
+        Int64 sum = 0;
+        // Complete this function
+        for(n = 0; n < ar.Length; n++)
         {
+            sum += ar[n];
         }
+        return sum;
+
+        
+
+
+    }
+
+    static void Main(String[] args)
+    {
+        int n = Convert.ToInt32(Console.ReadLine());
+        string[] ar_temp = Console.ReadLine().Split(' ');
+        long[] ar = Array.ConvertAll(ar_temp, Int64.Parse);
+        long result = aVeryBigSum(n, ar);
+        Console.WriteLine(result);
+        Console.ReadKey();
     }
 }
